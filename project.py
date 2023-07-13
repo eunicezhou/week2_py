@@ -29,12 +29,12 @@ def calculate_sum_of_bonus(data):
         bonus = 0
         if performance == "above average":
             bonus = salary*0.1
-            print(employee[index]["name"]+"! Congradulations! Your performance was so great ! You get bonus "+str(bonus)+"dollars")
+            print(employee[index]["name"]+" get bonus "+str(bonus)+"dollars")
         elif performance == "average":
             bonus = salary*0.05
-            print(employee[index]["name"]+" You performed well but not enough !Here's your bonus "+ str(bonus) + " dollars")
+            print(employee[index]["name"]+"get bonus "+ str(bonus) + " dollars")
         else:
-            print(employee[index]["name"]+" Sorry~Your KPI is not good enough , but don't give up . If you perform well next month , you'll get what you deserve")
+            print(employee[index]["name"]+" don't get any bonus")
 calculate_sum_of_bonus({
 "employees":[
 {
