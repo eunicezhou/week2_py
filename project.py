@@ -19,6 +19,7 @@ find_and_print({
 
 def calculate_sum_of_bonus(data):
     employee = data["employees"]
+    bonus = 0
     for index in range(len(employee)):
         salary = str(employee[index]["salary"])
         performance = employee[index]["performance"]
@@ -26,15 +27,11 @@ def calculate_sum_of_bonus(data):
             salary = int(salary.replace("USD",""))*30
         else:
             salary = int(''.join(filter(str.isdigit,salary)))
-        bonus = 0
         if performance == "above average":
-            bonus = salary*0.1
-            print(employee[index]["name"]+" get bonus "+str(bonus)+"dollars")
+            bonus += salary*0.1
         elif performance == "average":
-            bonus = salary*0.05
-            print(employee[index]["name"]+"get bonus "+ str(bonus) + " dollars")
-        else:
-            print(employee[index]["name"]+" don't get any bonus")
+            bonus += salary*0.05
+    print(int(bonus))
 calculate_sum_of_bonus({
 "employees":[
 {
