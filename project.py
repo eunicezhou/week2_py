@@ -29,10 +29,9 @@ def calculate_sum_of_bonus(data):
             salary = int(''.join(filter(str.isdigit,salary)))
         if performance == "above average":
             bonus += salary*0.1
-            print(employee[index]["name"]+"! Congradulations! Your performance was so great ! You get bonus "+str(bonus)+"dollars")
         elif performance == "average":
             bonus += salary*0.05
-    print(bonus)
+    print(int(bonus))
 "employees":[
 {
 "name":"John",
