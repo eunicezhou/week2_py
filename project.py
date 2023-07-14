@@ -19,6 +19,7 @@ find_and_print({
 
 def calculate_sum_of_bonus(data):
     employee = data["employees"]
+    bonus = 0
     for index in range(len(employee)):
         salary = str(employee[index]["salary"])
         performance = employee[index]["performance"]
@@ -26,16 +27,12 @@ def calculate_sum_of_bonus(data):
             salary = int(salary.replace("USD",""))*30
         else:
             salary = int(''.join(filter(str.isdigit,salary)))
-        bonus = 0
         if performance == "above average":
-            bonus = salary*0.1
+            bonus += salary*0.1
             print(employee[index]["name"]+"! Congradulations! Your performance was so great ! You get bonus "+str(bonus)+"dollars")
         elif performance == "average":
-            bonus = salary*0.05
-            print(employee[index]["name"]+" You performed well but not enough !Here's your bonus "+ str(bonus) + " dollars")
-        else:
-            print(employee[index]["name"]+" Sorry~Your KPI is not good enough , but don't give up . If you perform well next month , you'll get what you deserve")
-calculate_sum_of_bonus({
+            bonus += salary*0.05
+    print(bonus)
 "employees":[
 {
 "name":"John",
