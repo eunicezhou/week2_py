@@ -32,6 +32,7 @@ def calculate_sum_of_bonus(data):
         elif performance == "average":
             bonus += salary*0.05
     print(int(bonus))
+calculate_sum_of_bonus({
 "employees":[
 {
 "name":"John",
